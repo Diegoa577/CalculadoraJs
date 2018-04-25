@@ -23,7 +23,7 @@ var calculadora=  {
   },
   operacion:function(){
 
-
+    y=0;
     if (d==0 ) {
       oldNum=pantalla.textContent
     }
@@ -35,6 +35,7 @@ var calculadora=  {
     d=1;
     if (c==1) {
       theNum=pantalla.textContent
+      y=theNum
     }
     switch (b) {
       case 1:
@@ -43,6 +44,10 @@ var calculadora=  {
         oldNum=resulta
         resulta=0
         theNum =""
+      } else if(y!=0 && theNum==""){
+        resulta= parseFloat(oldNum) + parseFloat(y);
+        oldNum=resulta
+        resulta=0
       }
       c=1
       break;
@@ -52,6 +57,10 @@ var calculadora=  {
         oldNum=resulta
         resulta=0
         theNum =""
+      } else if(y!=0 && theNum==""){
+        resulta= parseFloat(oldNum) - parseFloat(y);
+        oldNum=resulta
+        resulta=0
       }
       c=1
       break;
@@ -61,6 +70,10 @@ var calculadora=  {
         oldNum=resulta
         resulta=0
         theNum =""
+      } else if(y!=0 && theNum==""){
+        resulta= parseFloat(oldNum) * parseFloat(y);
+        oldNum=resulta
+        resulta=0
       }
       c=1
       break;
@@ -70,6 +83,10 @@ var calculadora=  {
         oldNum=resulta
         resulta=0
         theNum =""
+      } else if(y!=0 && theNum==""){
+        resulta= parseFloat(oldNum) / parseFloat(y);
+        oldNum=resulta
+        resulta=0
       }
       c=1
       break;
@@ -108,6 +125,7 @@ var calculadora=  {
     c=0
     d=0
     e=0
+    y=0
 
   },
   asignarEventos: function() {
@@ -287,6 +305,7 @@ var calculadora=  {
       c=0;
       d=0;
       e=0;
+      y=0;
       lista=[]
       break;
 
